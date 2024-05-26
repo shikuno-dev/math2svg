@@ -20,6 +20,30 @@ pub fn svg_axes(x_start: usize, y_start: usize, x_end: usize, y_end: usize) -> S
     )
 }
 
+// fn svg_labels(horizontal_labels: &[(u32, &str)], vertical_labels: &[(u32, &str)]) -> String {
+//     let mut labels = String::new();
+
+//     // Add horizontal labels
+//     for &(x, label) in horizontal_labels {
+//         labels.push_str(&format!(
+//             r#"<text x="{x}" y="365" font-size="10" text-anchor="middle">{label}</text>"#,
+//             x = x,
+//             label = label
+//         ));
+//     }
+
+//     // Add vertical labels
+//     for &(y, label) in vertical_labels {
+//         labels.push_str(&format!(
+//             r#"<text x="45" y="{y}" font-size="10" text-anchor="end">{label}</text>"#,
+//             y = y,
+//             label = label
+//         ));
+//     }
+
+//     labels
+// }
+
 // pub fn svg_grid(horizontal_lines: &[usize], vertical_lines: &[usize]) -> String {
 //     let mut grid_lines = String::new();
 
