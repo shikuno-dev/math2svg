@@ -1,12 +1,48 @@
-pub fn plot() -> String {}
+use crate::svg::{svg_footer, svg_header};
 
-fn svg_header(width: usize, height: usize) -> String {
-    format!(
-        r#"<svg height="{height}" width="{width}" xmlns="http://www.w3.org/2000/svg">
-<rect width="100%" height="100%" fill="white"/>"#,
-        width = width,
-        height = height
-    )
+pub struct Plot {
+    output: String,
+}
+
+impl Plot {
+    pub fn plot(&mut self, width: usize, height: usize) {
+        let mut output = String::new();
+
+        output.push_str(&svg_header(width, height));
+
+        self.output = output;
+    }
+
+    pub fn grid(&mut self) {}
+
+    pub fn show(&mut self) -> String {
+        self.output.push_str(&svg_footer());
+
+        self.output.clone()
+    }
+
+    pub fn scatter(x: Vec<usize>, y: Vec<usize>) {}
+
+    pub fn pie(labels: &[&str], sizes: &[f64]) -> String {
+        use std::f64::consts::PI;
+
+        let total: f64 = sizes.iter().sum();
+        let mut current_angle = -PI / 2.0;
+
+        let center_x = 100.0;
+        let center_y = 100.0;
+        let radius = 100.0;
+
+        let mut output = String::new();
+
+        output.push_str(r#"<svg viewBox="0 0 200 200" width="200" height="200" xmlns="http://www.w3.org/2000/svg">"#);
+
+        output.push_str("</svg>");
+
+        output
+    }
+
+    pub fn title() {}
 }
 
 pub fn svg_axes(x_start: usize, y_start: usize, x_end: usize, y_end: usize) -> String {
