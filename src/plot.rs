@@ -23,7 +23,7 @@ impl Plot {
 
     pub fn scatter(x: Vec<usize>, y: Vec<usize>) {}
 
-    pub fn pie(labels: &[&str], sizes: &[f64]) -> String {
+    pub fn pie(&mut self, labels: &[&str], sizes: &[f64]) -> String {
         use std::f64::consts::PI;
 
         let total: f64 = sizes.iter().sum();
