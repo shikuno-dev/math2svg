@@ -139,9 +139,20 @@ fn pie(labels: &[&str], sizes: &[f64]) -> String {
     let mut current_angle = -90.0;
     let total: f64 = sizes.iter().sum();
 
+    // let colors = [
+    //     "red", "green", "blue", "yellow", "orange", "purple", "cyan", "magenta",
+    // ];
     let colors = [
-        "red", "green", "blue", "yellow", "orange", "purple", "cyan", "magenta",
+        "#3498db", // blue
+        "#e74c3c", // red
+        "#2ecc71", // green
+        "#f1c40f", // yellow
+        "#9b59b6", // purple
+        "#e67e22", // orange
+        "#1abc9c", // cyan
+        "#34495e", // dark bule
     ];
+
 
     let mut svg_content = String::new();
 
