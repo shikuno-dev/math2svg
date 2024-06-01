@@ -27,7 +27,10 @@ impl Plot {
         pie(labels, sizes)
     }
 
+    pub fn figure() {}
     pub fn title() {}
+    pub fn xlabel() {}
+    pub fn ylabel() {}
 }
 
 pub fn svg_axes(x_start: usize, y_start: usize, x_end: usize, y_end: usize) -> String {
@@ -152,7 +155,6 @@ fn pie(labels: &[&str], sizes: &[f64]) -> String {
         "#1abc9c", // cyan
         "#34495e", // dark bule
     ];
-
 
     let mut svg_content = String::new();
 
