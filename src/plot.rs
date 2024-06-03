@@ -33,14 +33,21 @@ impl Plot {
     pub fn ylabel() {}
 }
 
-pub fn svg_axes(x_start: usize, y_start: usize, x_end: usize, y_end: usize) -> String {
+pub fn svg_axes(
+    x_start: usize,
+    y_start: usize,
+    x_end: usize,
+    y_end: usize,
+    stroke: &str,
+) -> String {
     format!(
-        r#"<line x1="{x_start}" y1="{y_start}" x2="{x_end}" y2="{y_start}" stroke="black"/>
-<line x1="{x_start}" y1="{y_start}" x2="{x_start}" y2="{y_end}" stroke="black"/>"#,
+        r#"<line x1="{x_start}" y1="{y_start}" x2="{x_end}" y2="{y_start}" stroke="{stroke}"/>
+<line x1="{x_start}" y1="{y_start}" x2="{x_start}" y2="{y_end}" stroke="{stroke}"/>"#,
         x_start = x_start,
         y_start = y_start,
         x_end = x_end,
         y_end = y_end,
+        stroke = stroke
     )
 }
 
