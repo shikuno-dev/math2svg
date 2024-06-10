@@ -5,10 +5,10 @@ pub struct Plot {
 }
 
 impl Plot {
-    pub fn plot(&mut self, width: usize, height: usize) {
+    pub fn plot(&mut self, width: usize, height: usize, fill: &str) {
         let mut output = String::new();
 
-        output.push_str(&svg_header(width, height));
+        output.push_str(&svg_header(width, height, fill));
 
         self.output = output;
     }
