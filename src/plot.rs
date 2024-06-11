@@ -149,9 +149,6 @@ fn pie(labels: &[&str], sizes: &[f64]) -> String {
     let mut current_angle = -90.0;
     let total: f64 = sizes.iter().sum();
 
-    // let colors = [
-    //     "red", "green", "blue", "yellow", "orange", "purple", "cyan", "magenta",
-    // ];
     let colors = [
         "#3498db", // blue
         "#e74c3c", // red
