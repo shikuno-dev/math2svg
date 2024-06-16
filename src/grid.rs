@@ -2,7 +2,7 @@
 // use std::io::{self, Write};
 
 // fn create_grid_svg(size: u32, cell_size: u32, output_file: &str) -> io::Result<()> {
-pub fn create_grid_svg(size: u32, cell_size: u32) -> String {
+pub fn create_grid_svg(size: u32, cell_size: u32, stroke: &str, stroke_width: u32) -> String {
     let width = size * cell_size;
     let height = size * cell_size;
 
@@ -18,7 +18,7 @@ pub fn create_grid_svg(size: u32, cell_size: u32) -> String {
     for i in 0..=size {
         let y = i * cell_size;
         svg_data.push_str(&format!(
-            r#"<line x1="0" y1="{y}" x2="{width}" y2="{y}" stroke="black" stroke-width="1"/>"#
+            r#"<line x1="0" y1="{y}" x2="{width}" y2="{y}" stroke="{stroke}" stroke-width="{stroke_width}"/>"#
         ));
     }
 
@@ -26,7 +26,7 @@ pub fn create_grid_svg(size: u32, cell_size: u32) -> String {
     for i in 0..=size {
         let x = i * cell_size;
         svg_data.push_str(&format!(
-            r#"<line x1="{x}" y1="0" x2="{x}" y2="{height}" stroke="black" stroke-width="1"/>"#
+            r#"<line x1="{x}" y1="0" x2="{x}" y2="{height}" stroke="{stroke}" stroke-width={stroke_width}"/>"#
         ));
     }
 
