@@ -24,7 +24,18 @@ impl Plot {
     pub fn scatter(x: Vec<usize>, y: Vec<usize>) {}
 
     pub fn pie(&mut self, labels: &[&str], sizes: &[f64]) -> String {
-        pie(labels, sizes)
+        let colors: [&str; 8] = [
+            "#3498db", // blue
+            "#e74c3c", // red
+            "#2ecc71", // green
+            "#f1c40f", // yellow
+            "#9b59b6", // purple
+            "#e67e22", // orange
+            "#1abc9c", // cyan
+            "#34495e", // dark bule
+        ];
+
+        pie(labels, sizes, colors)
     }
 
     pub fn figure() {}
@@ -142,23 +153,23 @@ fn create_sector(
     format!("{}{}", path_element, text_element)
 }
 
-fn pie(labels: &[&str], sizes: &[f64]) -> String {
+fn pie(labels: &[&str], sizes: &[f64], colors: [&str; 8]) -> String {
     let cx = 500.0;
     let cy = 500.0;
     let radius = 300.0;
     let mut current_angle = -90.0;
     let total: f64 = sizes.iter().sum();
 
-    let colors = [
-        "#3498db", // blue
-        "#e74c3c", // red
-        "#2ecc71", // green
-        "#f1c40f", // yellow
-        "#9b59b6", // purple
-        "#e67e22", // orange
-        "#1abc9c", // cyan
-        "#34495e", // dark bule
-    ];
+    // let colors: [&str; 8] = [
+    //     "#3498db", // blue
+    //     "#e74c3c", // red
+    //     "#2ecc71", // green
+    //     "#f1c40f", // yellow
+    //     "#9b59b6", // purple
+    //     "#e67e22", // orange
+    //     "#1abc9c", // cyan
+    //     "#34495e", // dark bule
+    // ];
 
     let mut svg_content = String::new();
 
